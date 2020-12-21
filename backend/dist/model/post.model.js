@@ -10,7 +10,8 @@ const schemaConfig = {
 };
 const PostSchema = new mongoose_1.Schema({
     text: { type: String },
-    type: { type: String }
+    type: { type: String },
+    userId: { type: String }
 }, schemaConfig);
 exports.Post = mongoose_1.model('Post', PostSchema);
 exports.default = exports.Post;

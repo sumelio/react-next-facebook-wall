@@ -4,7 +4,6 @@ import Wall from './wall'
 
 const Home = () => (
   <div>
-    {' '}
     <Wall></Wall>
   </div>
 )

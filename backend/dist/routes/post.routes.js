@@ -25,6 +25,9 @@ const controller = __importStar(require("../controllers/post.controller"));
 const routes = (app) => {
     app.post(`/v1/${config_1.SERVICE_NAME}/api/post`, controller.createPost);
     app.get(`/v1/${config_1.SERVICE_NAME}/api/post/:id`, controller.getPost);
+    app.get(`/v1/${config_1.SERVICE_NAME}/api/post/user/:userId`, controller.getAllPostByUserId);
+    app.patch(`/v1/${config_1.SERVICE_NAME}/api/post/:id`, controller.updatePost);
+    app.delete(`/v1/${config_1.SERVICE_NAME}/api/post/:id`, controller.deletePost);
 };
 exports.routes = routes;
 //# sourceMappingURL=post.routes.js.map

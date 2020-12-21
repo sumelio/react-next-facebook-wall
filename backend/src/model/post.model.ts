@@ -17,7 +17,8 @@ interface IPostDocument extends Document {
 
 const PostSchema = new Schema<IPostDocument>({
   text: {type: String},
-  type: {type: String}
+  type: {type: String},
+  userId: {type: String}
 }, schemaConfig)
 
 export interface IPostModel extends Model<IPostDocument> {

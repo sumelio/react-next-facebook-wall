@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getPost = exports.createPost = void 0;
+exports.getAllPostByUserId = exports.getPost = exports.deletePost = exports.updatePost = exports.createPost = void 0;
 const post_service_1 = require("../services/post.service");
 const createPost = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -17,11 +17,35 @@ const createPost = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
         res.json({ code: 'OK', data: post });
     }
     catch (error) {
-        console.error(error);
+        console.error('error', error);
         res.status(500).send(error);
     }
 });
 exports.createPost = createPost;
+const updatePost = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        console.log('id', req.params);
+        const post = yield post_service_1.updatePost(req.params.id, req.body);
+        res.json({ code: 'OK', data: post });
+    }
+    catch (error) {
+        console.error('error', error);
+        res.status(500).send(error);
+    }
+});
+exports.updatePost = updatePost;
+const deletePost = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        console.log('id', req.params);
+        const post = yield post_service_1.deletePost(req.params.id);
+        res.json({ code: 'OK', data: post });
+    }
+    catch (error) {
+        console.error('error', error);
+        res.status(500).send(error);
+    }
+});
+exports.deletePost = deletePost;
 const getPost = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const post = yield post_service_1.getPost(req.params.id);
@@ -33,4 +57,16 @@ const getPost = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.getPost = getPost;
+const getAllPostByUserId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        console.log('req.params.userId', req.params.userId);
+        const post = yield post_service_1.getAllPost(req.params.userId);
+        res.json({ code: 'OK', data: post });
+    }
+    catch (error) {
+        console.error(error);
+        res.status(500).send(error);
+    }
+});
+exports.getAllPostByUserId = getAllPostByUserId;
 //# sourceMappingURL=post.controller.js.map
