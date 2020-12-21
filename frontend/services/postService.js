@@ -58,7 +58,6 @@ export const deletePost = async ({_id}) => {
 }
 
 export const getAllPost = async ({userId}) => {
-  debugger
   try {
     console.log('`${URL}/user/${userId}`', `${URL}/user/${userId}`)
     const response = await fetch(`${URL}/user/${userId}`, {
