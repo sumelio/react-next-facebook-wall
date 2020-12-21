@@ -1,5 +1,5 @@
 
-const URL = ' http://localhost:8200/v1/facebook-wall-backend/api/post'
+const URL = 'http://18.228.137.80:8200/v1/facebook-wall-backend/api/post'
 
 export const createPost = async ({data}) => {
   try {
