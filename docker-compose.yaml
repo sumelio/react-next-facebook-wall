@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    image: backend
+    environment:
+      TZ: "America/Bogota"
+      MONGO_HOSTS_PORT: ${MONGO_HOSTS_PORT}
+      PORT: 8200
+    depends_on:
+      - mongo
+    expose:
+      - 8200
+    ports:
+      - "8200:8200"
+    networks:
+      - appNetwork
+  frontend:
+    build:
+      context: ./frontend
+    image: frontend
+    environment:
+      TZ: "America/Bogota"
+    expose:
+      - 3000
+    ports:
+      - "3000:3000"
+  mongo:
+    image: mongo
+    environment:
+      TZ: "America/Bogota"
+    expose:
+      - 27017
+    ports:
+      - "27017:27017"
+    networks:
+      - appNetwork
+    command: mongod
+volumes:
+  static-content:
+networks:
+  appNetwork:
+    driver: bridge

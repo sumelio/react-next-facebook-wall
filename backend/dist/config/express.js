@@ -27,9 +27,6 @@ const express_1 = __importDefault(require("express"));
 const bodyParser = __importStar(require("body-parser"));
 const cors_1 = __importDefault(require("cors"));
 exports.app = express_1.default();
-// const corsOptions = {
-//     origin: ["http://localhost:3000", "http://104.197.118.193:8081"],
-//   };
 const corsOptions = {};
 exports.app.use(cors_1.default(corsOptions));
 // for parsing application/json

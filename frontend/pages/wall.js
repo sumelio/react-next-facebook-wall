@@ -18,6 +18,10 @@ const WallContent = styled.div`
   width: 32vw;
 `
 
+const Item = styled.div`
+  padding-bottom: 40px;
+`
+
 const A = styled.a`
   cursor: pointer;
   padding: 6px;
@@ -82,7 +86,7 @@ const Wall = () => {
   }, [posts, setPosts])
 
   const mapPost = (key) => (
-    <Post key={key} currentPost={posts[key]} edit={false} putPost={putPost} removePost={removePost}></Post>
+    <Item><Post key={key} currentPost={posts[key]} edit={false} putPost={putPost} removePost={removePost}></Post></Item>
   )
 
   const filterPost = (key) =>  !filter.type || posts[key].type ===  filter.type

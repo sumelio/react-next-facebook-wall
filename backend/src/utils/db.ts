@@ -8,7 +8,7 @@ import { MONGO_USER, MONGO_PASSWORD, MONGO_HOSTS_PORT } from '../config'
 mongoose.Promise = global.Promise
 mongoose.set('debug', process.env.DEBUG !== undefined)
 
-const mongoUrlDefault = `mongodb://${MONGO_USER ? `${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOSTS_PORT}` : MONGO_HOSTS_PORT}/post`
+const mongoUrlDefault = `mongodb://${MONGO_USER ? `${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_HOSTS_PORT}` : MONGO_HOSTS_PORT}`
 
 const opts = {
     useNewUrlParser: true,
