@@ -44,10 +44,6 @@ const PostEdit = ({ post, setEdit = () => {}, savePost }) => {
     setDisableButton(true)
   }, [text, type, setText, setDisableButton])
 
-  const A = styled.a`
-  cursor: pointer;
-  padding: 6px;
-`
   return (
     <PostEditWrapper>
       {showType ? (

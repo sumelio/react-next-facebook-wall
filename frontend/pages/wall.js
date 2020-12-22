@@ -22,7 +22,7 @@ const Item = styled.div`
   padding-bottom: 40px;
 `
 
-const A = styled.a`
+const A = styled.i`
   cursor: pointer;
   padding: 6px;
 `
@@ -33,10 +33,8 @@ const Wall = () => {
 
   useEffect(() => {
     const load = async () => {
-      debugger
       const req = await getAllPost({userId: 1})
       const postArray = [...req.data]
-      debugger
       setPosts(postArray.reduce( (acc, item) => {
           acc[item._id] = item
           return acc

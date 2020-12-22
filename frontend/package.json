@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "facebook frontend",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/sumelio/react-next-facebook-wall/tree/dev/frontend"
+    "type": "git",
+    "url": "https://github.com/sumelio/react-next-facebook-wall/tree/dev/frontend"
   },
   "main": "index.js",
   "scripts": {
